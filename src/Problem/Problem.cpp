@@ -22,5 +22,13 @@ namespace SPP {
 }
 
 namespace KP {
+    struct Problem {
+        vector<int> poids;
+        vector<int> coef;
+        int ressource;
+    };
 
+    struct Sol {
+        vector<int> sol;
+    };
 }
