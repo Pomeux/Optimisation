@@ -2,6 +2,10 @@
 #include<string>
 #include<vector>
 using namespace std;
+template<class T>
+bool compar_decroissant(T a,T b) {
+     return a>b;
+}
 
 namespace Utilitaire {
     string tab_to_string(vector<vector<int>> tab) {

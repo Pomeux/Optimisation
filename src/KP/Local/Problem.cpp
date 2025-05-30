@@ -21,14 +21,16 @@ namespace SPP {
     };
 }
 
-namespace KP {
+//namespace KP {
     struct Problem {
         vector<int> poids;
         vector<int> coef;
-        int ressource;
+        int poids_courant;
+        int capacite;
+        int size;
     };
 
     struct Sol {
         vector<int> sol;
     };
-}
+//}

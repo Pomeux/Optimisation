@@ -1,6 +1,11 @@
 # ninja log v6
 8	646	7702422156963796	CMakeFiles/Optimisation.dir/main.cpp.obj	5c1ab5239ab46c22
-649	866	7702422163360099	Optimisation.exe	c2812e90483ea37c
-28	538	7702425962721878	build.ninja	d3eba13c76031281
 71	796	7702425965261575	CMakeFiles/Optimisation.dir/src/main.cpp.obj	68347dfbe479ff81
 797	942	7702425972522367	Optimisation.exe	4a4e0e55d8a456fc
+28	538	7703134292604750	build.ninja	d3eba13c76031281
+46	1003	7703136256898280	CMakeFiles/Optimisation.dir/src/main.cpp.obj	68347dfbe479ff81
+1004	1534	7703136266480645	Optimisation.exe	4a4e0e55d8a456fc
+6	746	7703146885584820	CMakeFiles/Optimisation.dir/src/main.cpp.obj	68347dfbe479ff81
+747	905	7703146892984677	Optimisation.exe	4a4e0e55d8a456fc
+19	659	7703147021584244	CMakeFiles/Optimisation.dir/src/main.cpp.obj	68347dfbe479ff81
+661	795	7703147027992792	Optimisation.exe	4a4e0e55d8a456fc
