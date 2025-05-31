@@ -20,9 +20,12 @@ Sol construction(Problem problem) {
 
 
     for(int i=0;i<problem.size;i++) {
-        if(problem.poids_courant+U[i].first<problem.capacite) {
-            problem.poids_courant+=U[i].first;
+
+    	if(problem.poids_courant+problem.poids[U[i].second]<problem.capacite) {
+            problem.poids_courant+=problem.poids[U[i].second];
+    		cout << problem.coef[U[i].second] << endl;
             solution[U[i].second]=1;
+
         }
     }
 

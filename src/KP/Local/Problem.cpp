@@ -32,5 +32,6 @@ namespace SPP {
 
     struct Sol {
         vector<int> sol; //renomer
+        double z;
     };
 //}
