@@ -8,7 +8,8 @@ bool compar_decroissant(T a,T b) {
 }
 
 namespace Utilitaire {
-    string tab_to_string(vector<vector<int>> tab) {
+    template<class T>
+    string double_tab_to_string(vector<vector<T>> tab) {
         string s="";
         for (int i=0;i<tab.size();i++) {
             for (int j=0;j<tab[i].size();j++) {
@@ -17,5 +18,14 @@ namespace Utilitaire {
             s+="\n";
         }
         return s;
+    }
+    template<class T>
+    string tab_to_string(vector<T> tab) {
+        string s="";
+        for (int i=0;i<tab.size();i++) {
+            s=s+" "+to_string(tab[i]);
+        }
+        return s;
+
     }
 }

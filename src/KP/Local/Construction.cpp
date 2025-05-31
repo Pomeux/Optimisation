@@ -17,7 +17,7 @@ Sol construction(Problem problem) {
 	sort(U.begin(),U.end(),compar_decroissant<pair<float,int>>);
 
     vector<int> solution(problem.size,0);
-
+	cout << Utilitaire::tab_to_string<pair<float,int>>(U);
 
     for(int i=0;i<problem.size;i++) {
 
