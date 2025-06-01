@@ -28,4 +28,13 @@ namespace Utilitaire {
         return s;
 
     }
+    template<class T,class V>
+    string tab_pair_to_string(vector<pair<T,V>> tab) {
+        string s="";
+        for (int i=0;i<tab.size();i++) {
+            s=s+" ("+to_string(tab[i].first)+","+to_string(tab[i].second)+")";
+        }
+        return s;
+
+    }
 }

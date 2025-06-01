@@ -23,8 +23,8 @@ namespace SPP {
 
 //namespace KP {
     struct Problem {
-        vector<int> poids;
-        vector<int> coef;
+        vector<float> poids;
+        vector<float> coef;
         int poids_courant;
         int capacite;
         int size;
