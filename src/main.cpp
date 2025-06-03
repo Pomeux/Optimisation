@@ -4,16 +4,29 @@
 
 using namespace std;
 
-int main() {
 
-    Problem p;
-    p.coef={18.0f,25.0f,11.0f,14.0f};
-    p.poids={2.0f,2.0f,1.0f,1.0f};
-    p.capacite=3;
-    p.size=4;
-    Sol sol=construction(p);
+
+class Test {
+public:
+    int a;
+    Test(int a) {
+        this->a=a;
+    }
+
+};
+class B: public Test {
+public:
+    int b;
+    B(int a,int b):Test(a) {
+        this->a=2;
+    }
+
+};
+
+int main() {
+    B b(1,2);
+    b.a=3;
 
 
     return 0;
 }
-

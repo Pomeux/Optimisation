@@ -13,6 +13,8 @@ using namespace std;
 
 class Problem {
     public:
+		Problem();
+		~Problem();
         string to_string();
         double get_z();
         double caculate_z();
@@ -21,10 +23,10 @@ class Problem {
 		vector<vector<double> > get_contrainte();
 
     private:
-      double z;
-      int contrainte;
-      int variable;
-      vector<vector<double> > constraintes;
+		double z;
+		int contrainte;
+		int variable;
+		vector<vector<double> > constraintes;
 
 };
 
