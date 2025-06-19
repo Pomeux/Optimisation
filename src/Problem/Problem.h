@@ -9,7 +9,10 @@ using namespace std;
 #ifndef PROBLEM_H
 #define PROBLEM_H
 
-
+enum ProblemType {
+	MIN,
+  	MAX
+  };
 
 class Problem {
     public:
@@ -21,14 +24,20 @@ class Problem {
         int get_nb_variable();
         int get_nb_constrainte();
 		vector<vector<double> > get_contrainte();
+        ProblemType get_type();
 
+	//ajouter enum pour définir si le pb est min ou max 
     private:
 		double z;
 		int contrainte;
 		int variable;
 		vector<vector<double> > constraintes;
+        vector<double> coef; //coef de la fonction objectif
+        ProblemType type;
 
 };
+
+
 
 
 
