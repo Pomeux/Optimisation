@@ -6,6 +6,7 @@ namespace SPP {
 
     struct Problem {
         vector<vector<int>> tab;
+        vector<vector<int>> one_position;
         vector<int> coef;
         int ressource; //ligne
         int activite; //colonne

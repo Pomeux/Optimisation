@@ -8,7 +8,7 @@
 #include "Utilitaire.cpp"
 
 using namespace std;
-
+ajouter pour one_position
 namespace SPP {
     Problem parser(string s) {
 		Problem problem;
