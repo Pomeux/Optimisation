@@ -2,26 +2,26 @@
 #include<fstream>
 #include<string>
 #include<stdexcept>
-#include"Problem.cpp"
+#include<vector>
+#include"../SPP/Problem/Problem.cpp"
 #include<filesystem>
 #include<stdlib.h>
 #include "Utilitaire.cpp"
 
 using namespace std;
-ajouter pour one_position
+
 namespace SPP {
     Problem parser(string s) {
 		Problem problem;
 
-        s="../instance/"+s+".instance";
+        s="../instance/SSP/"+s+".dat";
 
         ifstream fichier;
         fichier.open(s,ios::in);
     	cout << filesystem::current_path() << endl;
+        cout << "a" << endl;
     	cout << s << endl;
         if(fichier.is_open()) {
-			  //Problem problem;
-
 
         	string current;
 
@@ -33,11 +33,15 @@ namespace SPP {
 			vector<vector<int>> tab(ressource,vector<int>(activite));
 			vector<int> coef(activite);
 
-
+			problem.one_position=vector<vector<int>>(activite);
         	for (int i=0;i<activite;i++) {
         		fichier >> current;
         		coef[i]=atoi(current.c_str());
+                problem.one_position[i].reserve(ressource);
+
         	}
+
+
 
         	for (int i=0;i<ressource;i++) {
         		fichier >> current;
@@ -46,6 +50,9 @@ namespace SPP {
         			fichier >> current;
         			int one_position=atoi(current.c_str())-1;
         			tab[i][one_position]=1;
+
+                    //cout << problem.one_position[one_position-1].capacity() << endl;
+					problem.one_position[one_position].push_back((i+1));
         		}
         	}
 

@@ -49,11 +49,11 @@ cmake_ninja_workdir = C$:/Users/leopl/CLionProjects/Optimisation/cmake-build-deb
 
 build cmake_object_order_depends_target_Optimisation: phony || .
 
-build CMakeFiles/Optimisation.dir/src/main.cpp.obj: CXX_COMPILER__Optimisation_unscanned_Debug C$:/Users/leopl/CLionProjects/Optimisation/src/main.cpp || cmake_object_order_depends_target_Optimisation
-  DEP_FILE = CMakeFiles\Optimisation.dir\src\main.cpp.obj.d
+build CMakeFiles/Optimisation.dir/src/SPP/main.cpp.obj: CXX_COMPILER__Optimisation_unscanned_Debug C$:/Users/leopl/CLionProjects/Optimisation/src/SPP/main.cpp || cmake_object_order_depends_target_Optimisation
+  DEP_FILE = CMakeFiles\Optimisation.dir\src\SPP\main.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Optimisation.dir
-  OBJECT_FILE_DIR = CMakeFiles\Optimisation.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\Optimisation.dir\src\SPP
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/Optimisation.dir/src/main.cpp.obj: CXX_COMPILER__Optimisation_u
 #############################################
 # Link the executable Optimisation.exe
 
-build Optimisation.exe: CXX_EXECUTABLE_LINKER__Optimisation_Debug CMakeFiles/Optimisation.dir/src/main.cpp.obj
+build Optimisation.exe: CXX_EXECUTABLE_LINKER__Optimisation_Debug CMakeFiles/Optimisation.dir/src/SPP/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Optimisation.dir

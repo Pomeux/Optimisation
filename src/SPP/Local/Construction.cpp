@@ -40,6 +40,9 @@ namespace SPP {
 				}
                 if(pass) {
 					solution.sol[val.second]=1;
+                    for(int i=0;i<problem.one_position[val.second].size();i++) {
+						occupe[problem.one_position[val.second][i]]=true;
+                    }
                  }
 
 				return solution;
