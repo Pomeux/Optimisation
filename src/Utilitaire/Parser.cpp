@@ -19,8 +19,7 @@ namespace SPP {
         ifstream fichier;
         fichier.open(s,ios::in);
     	cout << filesystem::current_path() << endl;
-        cout << "a" << endl;
-    	cout << s << endl;
+
         if(fichier.is_open()) {
 
         	string current;
