@@ -22,7 +22,7 @@ int main() {
         }*/
         construction(problem);
 
-        Regler bug et voir comment gérere les includes avec plusieurs fichiers
+
 
     } catch (exception e) {
         cout << e.what() << endl;
