@@ -6,7 +6,6 @@
 #include"../SPP/Problem/Problem.cpp"
 #include<filesystem>
 #include<stdlib.h>
-#include "Utilitaire.cpp"
 
 using namespace std;
 
@@ -25,9 +24,9 @@ namespace SPP {
         	string current;
 
         	fichier >> current;
-        	int ressource=atoi(current.c_str());
+        	int ressource=atoi(current.c_str()); //ligne
         	fichier >> current;
-        	int activite=atoi(current.c_str());
+        	int activite=atoi(current.c_str()); //colonne:va
 
 			vector<vector<int>> tab(ressource,vector<int>(activite));
 			vector<int> coef(activite);
@@ -51,7 +50,8 @@ namespace SPP {
         			tab[i][one_position]=1;
 
                     //cout << problem.one_position[one_position-1].capacity() << endl;
-					problem.one_position[one_position].push_back((i+1));
+
+					problem.one_position[one_position].push_back((i));
         		}
         	}
 
