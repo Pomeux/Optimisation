@@ -12,7 +12,7 @@ int main() {
  
 
     try {
-        SPP::Problem problem=SPP::parser("didacticSPP");
+        SPP::Problem problem=SPP::parser("pb_100rnd0100");
       /*  for (int i=0;i<problem.one_position.size();i++) {
             cout << (i+1);
             for (int j=0;j<problem.one_position[i].size();j++) {
