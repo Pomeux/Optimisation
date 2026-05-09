@@ -14,7 +14,9 @@ Sol construction(Problem problem) {
 		U[i]={problem.coef[i]/problem.poids[i],i};
 
     }
-	sort(U.begin(),U.end(),compar_decroissant<pair<float,int>>);
+	sort(U.begin(),U.end(),[](pair<float,int> a,pair<float,int> b){
+      return a.first>b.first;
+	});
 
     vector<int> solution(problem.size,0);
 
