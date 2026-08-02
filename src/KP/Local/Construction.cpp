@@ -1,37 +1,45 @@
 #include<iostream>
 #include"Problem.cpp"
 #include<vector>
-#include"Utilitaire.cpp"
 #include <bits/stdc++.h>
 
+
 using namespace std;
+using namespace Knapsack;
 
-Sol construction(Problem problem) {
- 	Sol sol;
+KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
+    vector<pair<float,int>> coeff_glutton(problem.size);
+    vector<int> solution(problem.size);
 
-	vector<pair<float,int>> U(problem.size);
-    for(int i=0;i<problem.size;i++) {
-		U[i]={problem.coef[i]/problem.poids[i],i};
+    int current_weight = 0;
+    int objective_value = 0;
 
+    for (int i=0;i<problem.size;i++) {
+
+        coeff_glutton[i]={problem.coefficients[i]/problem.weights[i],i};
     }
-	sort(U.begin(),U.end(),[](pair<float,int> a,pair<float,int> b){
-      return a.first>b.first;
-	});
+    sort(coeff_glutton.begin(),coeff_glutton.end(), [] (const pair<float,int> &a,const pair<float,int> &b){
 
-    vector<int> solution(problem.size,0);
+        return a.first>=b.first;
+    });
+    for (int i=0;i<problem.size;i++) {
 
-    for(int i=0;i<problem.size;i++) {
+        int index_item = coeff_glutton[i].second;
+        if (current_weight+problem.weights[index_item]<problem.capacity) {
 
-    	if(problem.poids_courant+problem.poids[U[i].second]<=problem.capacite) {
-            problem.poids_courant+=problem.poids[U[i].second];
-
-            solution[U[i].second]=1;
-
+            current_weight += problem.weights[index_item];
+            objective_value += problem.coefficients[index_item];
+            solution[index_item] = 1;
         }
     }
+    KnapSackSolution solution_knapsack{solution,objective_value,current_weight,problem};
 
-	sol.sol=solution;
-   	return sol;
+    return solution_knapsack;
+
 }
 
+int main() {
+    cout << "test";
 
+    return 0;
+}
