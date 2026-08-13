@@ -5,10 +5,12 @@ using namespace std;
 namespace Knapsack
 {
     struct KnapsackProblem {
-        vector<float> weights;
-        vector<float> coefficients;
+        vector<int> weights;
+        vector<int> coefficients;
         int capacity;
-        int size;
+        size_t size;
+
+
     };
 
     struct KnapSackSolution {
@@ -17,4 +19,5 @@ namespace Knapsack
         int capacity_reached;
         KnapsackProblem problem;
     };
+
 }

@@ -7,6 +7,14 @@
 using namespace std;
 using namespace Knapsack;
 
+template<typename T>
+auto print_tab = [](vector<T> tab) {
+    for (T t:tab)
+    {
+        cout << t << " ";
+    }
+};
+
 KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
     vector<pair<float,int>> coeff_glutton(problem.size);
     vector<int> solution(problem.size);
@@ -14,18 +22,21 @@ KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
     int current_weight = 0;
     int objective_value = 0;
 
+
     for (int i=0;i<problem.size;i++) {
 
-        coeff_glutton[i]={problem.coefficients[i]/problem.weights[i],i};
+        coeff_glutton[i]={static_cast<float>(problem.coefficients[i])/static_cast<float>(problem.weights[i]),i};
     }
+
     sort(coeff_glutton.begin(),coeff_glutton.end(), [] (const pair<float,int> &a,const pair<float,int> &b){
 
-        return a.first>=b.first;
+        return a.first>b.first;
     });
+
     for (int i=0;i<problem.size;i++) {
 
         int index_item = coeff_glutton[i].second;
-        if (current_weight+problem.weights[index_item]<problem.capacity) {
+        if (current_weight+problem.weights[index_item]<=problem.capacity) {
 
             current_weight += problem.weights[index_item];
             objective_value += problem.coefficients[index_item];
@@ -36,10 +47,35 @@ KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
 
     return solution_knapsack;
 
+
 }
 
+
+/*
+ *  6 4 1
+ *  6 2 1
+ */
+
+/*
+ *
+ */
+
 int main() {
-    cout << "test";
+    // vector<int> weight={6,2,1};
+    // vector<int> coef={6,4,1};
+    //
+    std::vector<int> weight = {62, 40, 77, 56, 22, 79, 71, 63, 39, 23};
+
+
+    std::vector<int> coef = {34, 79, 66, 32, 33, 43, 20, 42, 40, 80};
+    int capacity = 250;
+
+
+    KnapsackProblem problem{weight,coef,capacity,weight.size()};
+    KnapSackSolution solution =glouton_knapsack(problem);
+    cout << solution.objective_value << " ";
+
+    print_tab<int>(solution.solution);
 
     return 0;
 }
