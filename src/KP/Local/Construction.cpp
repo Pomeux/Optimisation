@@ -1,14 +1,13 @@
-#include<iostream>
-#include"Problem.cpp"
-#include<vector>
-#include <bits/stdc++.h>
+#include <iostream>
+#include "Problem.cpp"
+#include <vector>
 
 
 using namespace std;
 using namespace Knapsack;
 
 template<typename T>
-auto print_tab = [](vector<T> tab) {
+auto print_tab = [](const vector<T> &tab) {
     for (T t:tab)
     {
         cout << t << " ";
@@ -19,8 +18,8 @@ KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
     vector<pair<float,int>> coeff_glutton(problem.size);
     vector<int> solution(problem.size);
 
-    int current_weight = 0;
-    int objective_value = 0;
+    size_t current_weight = 0;
+    size_t objective_value = 0;
 
 
     for (int i=0;i<problem.size;i++) {
@@ -43,7 +42,8 @@ KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
             solution[index_item] = 1;
         }
     }
-    KnapSackSolution solution_knapsack{solution,objective_value,current_weight,problem};
+
+    KnapSackSolution solution_knapsack(solution,objective_value,current_weight);
 
     return solution_knapsack;
 
@@ -68,7 +68,7 @@ int main() {
 
 
     std::vector<int> coef = {34, 79, 66, 32, 33, 43, 20, 42, 40, 80};
-    int capacity = 250;
+    size_t capacity = 250;
 
 
     KnapsackProblem problem{weight,coef,capacity,weight.size()};
