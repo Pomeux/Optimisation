@@ -14,7 +14,7 @@ auto print_tab = [](const vector<T> &tab) {
     }
 };
 
-KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
+KnapSackSolution greedy_knapsack(const KnapsackProblem &problem) {
     vector<pair<float,int>> coeff_glutton(problem.size);
     vector<int> solution(problem.size);
 
@@ -51,6 +51,7 @@ KnapSackSolution glouton_knapsack(const KnapsackProblem &problem) {
 }
 
 
+
 /*
  *  6 4 1
  *  6 2 1
@@ -72,7 +73,7 @@ int main() {
 
 
     KnapsackProblem problem{weight,coef,capacity,weight.size()};
-    KnapSackSolution solution =glouton_knapsack(problem);
+    KnapSackSolution solution =greedy_knapsack(problem);
     cout << solution.objective_value << " ";
 
     print_tab<int>(solution.solution);
