@@ -22,10 +22,11 @@ namespace Operation
 
     struct Move
     {
-        int index_put1;
-        int index_put2;
-        int index_pop1;
-        int index_pop2;
+
+        int index_put1 = -1;
+        int index_put2 = -1;
+        int index_pop1 = -1;
+        int index_pop2 = -1;
 
         int objective_value;
         int weight_value;
@@ -37,8 +38,8 @@ namespace Operation
     };
     struct Neighbour
     {
-        Neighbour(int n);
-        void add_neighbour(const Move &move);
+        Neighbour(size_t n);
+        void add_move(const Move &move);
 
         size_t index_best_move = 0;
         vector<Move> total;
