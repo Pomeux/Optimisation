@@ -60,23 +60,3 @@ KnapSackSolution greedy_knapsack(const KnapsackProblem &problem) {
 /*
  *
  */
-
-int main() {
-    // vector<int> weight={6,2,1};
-    // vector<int> coef={6,4,1};
-    //
-    std::vector<int> weight = {62, 40, 77, 56, 22, 79, 71, 63, 39, 23};
-
-
-    std::vector<int> coef = {34, 79, 66, 32, 33, 43, 20, 42, 40, 80};
-    size_t capacity = 250;
-
-
-    KnapsackProblem problem{weight,coef,capacity,weight.size()};
-    KnapSackSolution solution =greedy_knapsack(problem);
-    cout << solution.objective_value << " ";
-
-    print_tab<int>(solution.solution);
-
-    return 0;
-}

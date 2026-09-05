@@ -41,6 +41,7 @@ namespace Operation
         Neighbour(size_t n);
         void add_move(const Move &move);
 
+
         size_t index_best_move = 0;
         vector<Move> total;
 

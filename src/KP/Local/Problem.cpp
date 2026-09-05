@@ -4,6 +4,8 @@
 
 #include"Problem.h"
 
+#pragma once
+
 using namespace std;
 using namespace Knapsack;
 

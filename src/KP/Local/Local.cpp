@@ -2,11 +2,15 @@
 #include "Problem.cpp"
 #include "Operation.cpp"
 #include <vector>
-#include <stdexcept>
+
+
+
 
 using namespace std;
 using namespace Knapsack;
 using namespace Operation;
+
+
 
 
 enum TYPE_EXCHANGE
@@ -15,10 +19,7 @@ enum TYPE_EXCHANGE
     ZERO
 };
 
-KnapSackSolution research_local(const KnapSackSolution &solution)
-{
 
-}
 Neighbour exchange_1D(const KnapSackSolution &solution,const KnapsackProblem &problem,const vector<int> &vector_index, const TYPE_EXCHANGE type, const int size_neighbour)
 {
     Neighbour neighbour(size_neighbour);
@@ -53,6 +54,7 @@ Neighbour zero_one_exchange(const KnapSackSolution &solution,const KnapsackProbl
 {
     return exchange_1D(solution,problem,solution.index_zero,ONE,solution.index_one.size());
 }
+/*
 Neighbour zero_one_exchange(const KnapSackSolution &solution,const KnapsackProblem &problem)
 {
     Neighbour neighbour(solution.index_one.size());
@@ -68,5 +70,6 @@ Neighbour zero_one_exchange(const KnapSackSolution &solution,const KnapsackProbl
     }
     return neighbour;
 }
+*/
 
 
