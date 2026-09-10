@@ -42,6 +42,7 @@ namespace Operation
         void add_move(const Move &move);
 
 
+        size_t index_best_move_feasible = 0;
         size_t index_best_move = 0;
         vector<Move> total;
 
