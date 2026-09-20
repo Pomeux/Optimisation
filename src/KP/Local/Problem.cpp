@@ -1,6 +1,7 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <stdexcept>
+#include <algorithm>
 
 #include"Problem.h"
 
@@ -29,4 +30,35 @@ KnapSackSolution::KnapSackSolution(const vector<int> &solution,size_t objective_
             break;
         }
     }
+}
+
+ostream &operator<<(ostream &os,const KnapsackProblem &problem)
+{
+    os << " capacity: " << problem.capacity << endl;
+
+    for (int i=0;i<problem.size;i++)
+    {
+        os << " c: " << problem.coefficients[i] << "w: " << problem.weights[i];
+    }
+    os << endl;
+    return os;
+}
+
+
+ostream &operator<<(ostream &os, const KnapSackSolution &solution)
+{
+
+    auto tab= [&os] (int i) {os << i << " ";};
+    for_each(solution.solution.begin(),solution.solution.end(),tab);
+
+    os << endl << "obj: " << solution.objective_value
+    << " capacity reached: "
+    << solution.capacity_reached << endl;
+
+    os << "one: ";
+    for_each(solution.index_one.begin(),solution.index_one.end(),tab);
+    os << endl << "zero: ";
+    for_each(solution.index_zero.begin(),solution.index_zero.end(),tab);
+
+    return os;
 }
